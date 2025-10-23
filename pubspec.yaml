@@ -1,9 +1,11 @@
-name: flutter_app
-description: "A production-level Flutter project with GetX state management."
+name: ecommerce_app
+description: "Easy Commerce is a production-level Flutter application built with GetX state management, clean architecture, and a modern UI."
 publish_to: 'none'
 version: 1.0.0+1
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.6.0
+
+#-------------------------[dependencies]--------------------------
 dependencies:
   flutter:
     sdk: flutter
@@ -18,6 +20,11 @@ dependencies:
   
   json_annotation: ^4.9.0
 
+
+  #------------------utilities--------------------------
+  #spalash screen
+  flutter_native_splash: ^2.4.7
+  
 #-------------[Development Dependencies]-------------
 dev_dependencies:
   flutter_test:
@@ -31,16 +38,16 @@ flutter:
 
 #-----------------[assets]-------------
 assets:
-  - assets/images/
-  - assets/icons/
-  - assets/fonts/
-  - assets/animations/
-  - assets/videos/
-  - assets/sounds/
-  - assets/documents/
-  - assets/spreadsheets/
-  - assets/presentations/
-  - assets/pdfs/
+  - assets/logo/
+  # - assets/icons/
+  # - assets/fonts/
+  # - assets/animations/
+  # - assets/videos/
+  # - assets/sounds/
+  # - assets/documents/
+  # - assets/spreadsheets/
+  # - assets/presentations/
+  # - assets/pdfs/
 
 #-----------------[fonts]-------------
 fonts:

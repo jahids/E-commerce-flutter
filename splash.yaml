@@ -1,0 +1,19 @@
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  # Background colors
+  color: "#FFFFFF"
+  color_dark: "#000000"
+
+  # Center logo images
+  image: assets/logo/black_app_logo.png
+  image_dark: assets/logo/white_app_logo.png
+
+  # Required explicit section for Android 12
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "#000000"
+    image: assets/logo/black_app_logo.png
+    image_dark: assets/logo/white_app_logo.png
