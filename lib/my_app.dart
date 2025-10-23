@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/utils/theme/theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -6,12 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('My App')),
-        body: Center(
-          child: Text('Hello, World! edit this file to see the changes'),
-        ),
-      ),
+      themeMode: ThemeMode.system,
+      theme: UAppTheme.lightTheme,
+      darkTheme: UAppTheme.darkTheme,
+      home: Scaffold(),
     );
   }
 }
