@@ -1,5 +1,7 @@
+import 'package:ecommerce_app/features/authentication/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart';
 
 class OnboardingController extends GetxController {
   // singleton
@@ -32,6 +34,7 @@ class OnboardingController extends GetxController {
 // next page action
   void nextPage() {
     if (currentIndex.value == 2) {
+      Get.offAll(() => LoginScreen());
       return;
     }
     currentIndex.value++;
