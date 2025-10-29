@@ -14,7 +14,11 @@ class signinCreateAccButton extends StatelessWidget {
       children: [
         UElevatedButton(onPressed: () {}, child: Text(UTexts.signIn)),
         SizedBox(height: USizes.spaceBtwItems / 2),
-        UElevatedButton(onPressed: () {}, child: Text(UTexts.createAccount))
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton(
+              onPressed: () {}, child: Text(UTexts.createAccount)),
+        )
       ],
     );
   }
