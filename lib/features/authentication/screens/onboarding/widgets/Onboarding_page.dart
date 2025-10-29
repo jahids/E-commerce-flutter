@@ -21,9 +21,10 @@ class onboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          top: UDeviceHelper.getAppBarHeight(),
-          left: USizes.defaultSpace,
-          right: USizes.defaultSpace),
+        top: UDeviceHelper.getAppBarHeight(),
+        // left: USizes.defaultSpace,
+        // right: USizes.defaultSpace
+      ),
       child: Column(
         children: [
           Lottie.asset(animation),

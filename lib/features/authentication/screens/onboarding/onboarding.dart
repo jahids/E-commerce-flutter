@@ -1,11 +1,16 @@
 //onboarding screen
+import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
 import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/Onboarding_page.dart';
+import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboardingNavigations.dart';
+import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboardingNextBtn.dart';
+import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboardingSkipButton.dart';
 import 'package:ecommerce_app/utils/constants/images.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:ecommerce_app/utils/helpers/device_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -13,7 +18,9 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+        body: Padding(
+      padding: EdgeInsets.all(USizes.defaultSpace),
+      child: Stack(
         children: [
           PageView(
             children: [
@@ -35,8 +42,19 @@ class OnboardingScreen extends StatelessWidget {
               // Lottie.asset(UImages.animationOnboarding3),
             ],
           ),
+
+          //indicator
+
+          onboardingDotsNavigation(),
+
+          //bottom button
+
+          OnboardingNextButton(),
+
+          //skip button
+          OnboardingSkipButton()
         ],
       ),
-    );
+    ));
   }
 }
