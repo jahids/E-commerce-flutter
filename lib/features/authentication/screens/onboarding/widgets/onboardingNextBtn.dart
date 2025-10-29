@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
+import 'package:ecommerce_app/features/authentication/controller/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 class OnboardingNextButton extends StatelessWidget {
   const OnboardingNextButton({
@@ -15,9 +17,11 @@ class OnboardingNextButton extends StatelessWidget {
         bottom: USizes.spaceBtwItems,
         child: UElevatedButton(
           onPressed: () {
-            print("Next");
+            OnboardingController.to.nextPage();
           },
-          child: Text("next"),
+          child: Obx(() => Text(OnboardingController.to.currentIndex.value == 2
+              ? "Get Started"
+              : "Next")),
         ));
   }
 }

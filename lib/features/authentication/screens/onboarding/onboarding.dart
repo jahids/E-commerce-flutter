@@ -1,5 +1,6 @@
 //onboarding screen
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
+import 'package:ecommerce_app/features/authentication/controller/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/Onboarding_page.dart';
 import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboardingNavigations.dart';
 import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboardingNextBtn.dart';
@@ -23,6 +24,9 @@ class OnboardingScreen extends StatelessWidget {
       child: Stack(
         children: [
           PageView(
+            controller: OnboardingController.to.pageController,
+            onPageChanged: (index) =>
+                OnboardingController.to.updateCurrentIndex(index),
             children: [
               //wrap padding
               onboardingScreen(

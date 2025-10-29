@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/authentication/controller/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_app/utils/helpers/device_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -14,12 +15,13 @@ class onboardingDotsNavigation extends StatelessWidget {
         left: UDeviceHelper.getScreenWidth(context) / 3,
         right: UDeviceHelper.getScreenWidth(context) / 3,
         child: SmoothPageIndicator(
-            controller: PageController(), // PageController
+            controller:
+                OnboardingController.to.pageController, // PageController
             count: 3,
             effect:
                 ExpandingDotsEffect(dotHeight: 6.0), // your preferred effect
             onDotClicked: (index) {
-              print('index: $index');
+              OnboardingController.to.dotNavigationClicked(index);
             }));
   }
 }
