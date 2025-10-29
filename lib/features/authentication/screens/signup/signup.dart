@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/widgets/loginDevider.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/widgets/thirdpartyLogin.dart';
+import 'package:ecommerce_app/features/authentication/screens/signup/widgets/signup_privacy_policy.dart';
+import 'package:ecommerce_app/features/authentication/screens/signup/widgets/signupform.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
@@ -25,87 +27,11 @@ class SignupScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium),
             SizedBox(height: USizes.spaceBtwSections),
             //signup form
-            Row(
-              children: [
-                Expanded(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.user),
-                      labelText: UTexts.firstName,
-                      hintText: UTexts.firstName,
-                    ),
-                  ),
-                ),
-                SizedBox(width: USizes.spaceBtwItems),
-                Expanded(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.user),
-                      labelText: UTexts.lastName,
-                      hintText: UTexts.lastName,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            SizedBox(height: USizes.spaceBtwInputFields),
-            //email
-            TextFormField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Iconsax.direct_right),
-                labelText: UTexts.email,
-                hintText: UTexts.email,
-              ),
-            ),
-
-            SizedBox(height: USizes.spaceBtwInputFields),
-            //phone number
-            TextFormField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Iconsax.call),
-                labelText: UTexts.phoneNumber,
-              ),
-            ),
-
-            SizedBox(height: USizes.spaceBtwInputFields),
-            //password
-            TextFormField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
-                labelText: UTexts.password,
-                hintText: UTexts.password,
-              ),
-            ),
+            signupForm(),
 
             SizedBox(height: USizes.spaceBtwInputFields),
             //privacy policy
-            Row(
-              children: [
-                Checkbox(value: true, onChanged: (value) {}),
-                RichText(
-                    text: TextSpan(
-                  children: [
-                    TextSpan(
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        text: '${UTexts.iAgreeTo} '),
-                    TextSpan(
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            decoration: TextDecoration.underline,
-                            color: UColors.primary),
-                        text: ' ${UTexts.privacyPolicy} '),
-                    TextSpan(
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        text: ' ${UTexts.and} '),
-                    TextSpan(
-                        text: UTexts.termsOfUse,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            decoration: TextDecoration.underline,
-                            color: UColors.primary)),
-                  ],
-                ))
-              ],
-            ),
+            signup_privacy_policy(),
 
             SizedBox(height: USizes.spaceBtwItems / 2),
             //signup button
