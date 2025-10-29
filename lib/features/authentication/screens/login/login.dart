@@ -5,6 +5,7 @@ import 'package:ecommerce_app/features/authentication/screens/login/widgets/logi
 import 'package:ecommerce_app/features/authentication/screens/login/widgets/signinCreateAccButton.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/widgets/thirdpartyLogin.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
+import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,11 +14,12 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
           padding: EdgeInsets.all(USizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //header
               loginHeader(),
@@ -35,7 +37,7 @@ class LoginScreen extends StatelessWidget {
               signinCreateAccButton(),
               SizedBox(height: USizes.spaceBtwItems),
               // devider
-              loginDevider(),
+              loginDevider(text: UTexts.orSignInWith),
               SizedBox(height: USizes.spaceBtwItems / 2),
               //sign in with icons section
               thirdpartyLogin(),

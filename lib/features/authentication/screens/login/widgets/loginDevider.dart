@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/utils/constants/texts.dart';
 
 class loginDevider extends StatelessWidget {
   const loginDevider({
     super.key,
+    required this.text,
   });
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class loginDevider extends StatelessWidget {
           indent: 30,
           endIndent: 10,
         )),
-        Text(UTexts.orSignInWith),
+        Text(text),
         Expanded(
             child: Divider(
           indent: 10,
