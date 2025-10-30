@@ -1,5 +1,8 @@
+import 'package:ecommerce_app/features/authentication/screens/forgetPassword/forgetPassword.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 
 class loginremembermeSection extends StatelessWidget {
   const loginremembermeSection({
@@ -19,7 +22,11 @@ class loginremembermeSection extends StatelessWidget {
         ),
 
         //forget password
-        TextButton(onPressed: () {}, child: Text(UTexts.forgetPassword)),
+        TextButton(
+            onPressed: () {
+              Get.to(() => ForgetPasswordScreen());
+            },
+            child: Text(UTexts.forgetPassword)),
       ],
     );
   }

@@ -10,4 +10,5 @@ class UImages {
   //login logo
   static const String facebookIcon = 'assets/logo/facebook-icon.png';
   static const String googleIcon = 'assets/logo/google-icon.png';
+  static const String passwordResetIcon = 'assets/images/mail_illustration.png';
 }
