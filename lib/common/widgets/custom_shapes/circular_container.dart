@@ -1,21 +1,33 @@
-import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/helpers/device_helpers.dart';
 import 'package:flutter/material.dart';
+import '../../../utils/constants/colors.dart';
 
-class UcircularContainer extends StatelessWidget {
-  const UcircularContainer({
-    super.key,
-  });
+class UCircularContainer extends StatelessWidget {
+  const UCircularContainer(
+      {super.key,
+      this.height = 400,
+      this.width = 400,
+      this.backgroundColor = UColors.white,
+      this.padding,
+      this.margin,
+      this.child});
+
+  final double height, width;
+  final Color backgroundColor;
+  final EdgeInsetsGeometry? padding, margin;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: UDeviceHelper.getScreenHeight(context) * 0.4,
-      width: UDeviceHelper.getScreenWidth(context) * 0.85,
+      height: height,
+      width: width,
+      padding: padding,
+      margin: margin,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(500),
-        color: UColors.white.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(1000),
+        color: backgroundColor,
       ),
+      child: child,
     );
   }
 }
