@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:path_provider/path_provider.dart';
 
 class UHelperFunctions {
   UHelperFunctions._();
@@ -69,19 +68,19 @@ class UHelperFunctions {
   }
 
   /// Function to convert asset to file
-  static Future<File> assetToFile(String assetPath) async {
-    // Load asset bytes
-    final byteData = await rootBundle.load(assetPath);
+  // static Future<File> assetToFile(String assetPath) async {
+  //   // Load asset bytes
+  //   final byteData = await rootBundle.load(assetPath);
 
-    // Get temp directory
-    final tempDir = await getTemporaryDirectory();
-    final file = File('${tempDir.path}/${assetPath.split('/').last}');
+  //   // Get temp directory
+  //   final tempDir = await getTemporaryDirectory();
+  //   final file = File('${tempDir.path}/${assetPath.split('/').last}');
 
-    // Write bytes to temp file
-    await file.writeAsBytes(byteData.buffer.asUint8List());
+  //   // Write bytes to temp file
+  //   await file.writeAsBytes(byteData.buffer.asUint8List());
 
-    return file;
-  }
+  //   return file;
+  // }
 
   static String getFormattedDate(DateTime date,
       {String format = 'dd MMM yyyy'}) {

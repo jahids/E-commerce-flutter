@@ -1,11 +1,11 @@
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
 import 'package:ecommerce_app/features/authentication/screens/signup/signup.dart';
+import 'package:ecommerce_app/navigation_menu.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
-import 'package:http/http.dart';
 
 class signinCreateAccButton extends StatelessWidget {
   const signinCreateAccButton({
@@ -16,7 +16,12 @@ class signinCreateAccButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        UElevatedButton(onPressed: () {}, child: Text(UTexts.signIn)),
+        UElevatedButton(
+            onPressed: () {
+              print('sign in button pressed');
+              Get.to(() => NavigationMenu());
+            },
+            child: Text(UTexts.signIn)),
         SizedBox(height: USizes.spaceBtwItems / 2),
         SizedBox(
           width: double.infinity,
