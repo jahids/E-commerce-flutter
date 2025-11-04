@@ -14,15 +14,20 @@ class ResetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        //some padding
+
         appBar: AppBar(
           automaticallyImplyLeading: false,
           actions: [
-            IconButton(
-              onPressed: () {
-                Get.offAll(() => ForgetPasswordScreen());
-              },
-              icon: Icon(Icons.close),
-            ),
+            Padding(
+              padding: EdgeInsets.all(USizes.defaultSpace),
+              child: IconButton(
+                onPressed: () {
+                  Get.offAll(() => ForgetPasswordScreen());
+                },
+                icon: Icon(Icons.close),
+              ),
+            )
           ],
         ),
         body: Padding(
