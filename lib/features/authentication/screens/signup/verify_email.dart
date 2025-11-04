@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
+import 'package:ecommerce_app/common/widgets/screens/success_screen.dart';
 import 'package:ecommerce_app/features/authentication/screens/forgetPassword/forgetPassword.dart';
 import 'package:ecommerce_app/utils/constants/images.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
@@ -6,10 +7,10 @@ import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:ecommerce_app/utils/helpers/device_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_core/get_core.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({super.key});
+class VerifyEmailScreen extends StatelessWidget {
+  const VerifyEmailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +19,6 @@ class ResetPasswordScreen extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           actions: [
-            // Padding(
-            //   padding: EdgeInsets.all(USizes.defaultSpace),
-            //   child: IconButton(
-            //     onPressed: () {
-            //       print('close button pressed');
-            //       Get.offAll(() => ForgetPasswordScreen());
-            //     },
-            //     icon: Icon(Icons.close),
-            //   ),
-            // )
-
-            //another way to close the app
             IconButton(
               padding: EdgeInsets.only(right: USizes.defaultSpace),
               onPressed: () {
@@ -52,17 +41,17 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: USizes.spaceBtwInputFields),
             //maintaitle
-            Text(UTexts.resetPasswordTitle,
+            Text(UTexts.verifyEmailTitle,
                 style: Theme.of(context).textTheme.headlineMedium),
             SizedBox(height: USizes.spaceBtwInputFields),
             //subtitle
-            Text("sample@gmail.com",
+            Text("verify@gmail.com",
                 style: Theme.of(context).textTheme.bodyMedium),
             SizedBox(height: USizes.spaceBtwInputFields),
 
             //some text
             Text(
-              UTexts.resetPasswordSubTitle,
+              UTexts.verifyEmailSubTitle,
               style: Theme.of(context).textTheme.bodySmall,
               textAlign: TextAlign.center,
             ),
@@ -71,8 +60,15 @@ class ResetPasswordScreen extends StatelessWidget {
             UElevatedButton(
                 onPressed: () {
                   print('done button pressed');
+                  Get.to(() => SuccessScreen(
+                        title: UTexts.accountCreatedTitle,
+                        subTitle: UTexts.accountCreatedSubTitle,
+                        image: UImages.accountCreated,
+                        buttonText: UTexts.uContinue,
+                        onPressed: () {},
+                      ));
                 },
-                child: Text(UTexts.done)),
+                child: Text(UTexts.uContinue)),
             //resend email button
             SizedBox(
                 width: double.infinity,

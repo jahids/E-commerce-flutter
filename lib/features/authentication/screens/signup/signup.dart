@@ -1,12 +1,15 @@
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/widgets/loginDevider.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/widgets/thirdpartyLogin.dart';
+import 'package:ecommerce_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecommerce_app/features/authentication/screens/signup/widgets/signup_privacy_policy.dart';
 import 'package:ecommerce_app/features/authentication/screens/signup/widgets/signupform.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -36,7 +39,11 @@ class SignupScreen extends StatelessWidget {
             SizedBox(height: USizes.spaceBtwItems / 2),
             //signup button
             UElevatedButton(
-                onPressed: () {}, child: Text(UTexts.createAccount)),
+                onPressed: () {
+                  print('signup button pressed');
+                  Get.to(() => VerifyEmailScreen());
+                },
+                child: Text(UTexts.createAccount)),
 
             SizedBox(height: USizes.spaceBtwItems / 2),
             //devider line
