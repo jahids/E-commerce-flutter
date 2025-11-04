@@ -1,6 +1,6 @@
+import 'package:ecommerce_app/features/authentication/screens/Home/home.dart';
 import 'package:ecommerce_app/features/authentication/screens/forgetPassword/forgetPassword.dart';
 import 'package:ecommerce_app/features/authentication/screens/forgetPassword/reset_password.dart';
-import 'package:ecommerce_app/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_app/features/authentication/screens/signup/signup.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
@@ -48,15 +48,13 @@ class NavigationController extends GetxController {
 
   RxInt selectedIndex = 0.obs;
   RxList<Widget> widgetList = [
-    LoginScreen(),
+    HomeScreen(),
     SignupScreen(),
     ForgetPasswordScreen(),
     ResetPasswordScreen(),
   ].obs;
 
   void setSelectedIndex(int index) {
-    print('selected index in getx: $index');
-    print('navigation menu dark mode: $isDarkMode');
     selectedIndex.value = index;
   }
 }
