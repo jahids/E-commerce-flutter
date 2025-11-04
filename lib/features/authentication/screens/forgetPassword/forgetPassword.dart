@@ -1,7 +1,10 @@
 import 'package:ecommerce_app/common/widgets/button/elevated_button.dart';
+import 'package:ecommerce_app/features/authentication/screens/forgetPassword/reset_password.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -42,6 +45,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             UElevatedButton(
                 onPressed: () {
                   print('submit button pressed');
+                  Get.to(() => ResetPasswordScreen());
                 },
                 child: Text(UTexts.submit)),
           ],
